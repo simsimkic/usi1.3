@@ -1,0 +1,31 @@
+﻿<Window x:Class="ZdravoCorp.GUI.Nurse_s_View.AccountsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp"
+        mc:Ignorable="d"
+        Title="AccountsView" Height="450" Width="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Patients}" Name="accountsDataGrid" SelectionMode="Single" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,87,0,156">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="110" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="First Name" Width="80" Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Last Name" Width="80" Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Username" Width="100" Binding="{Binding Username}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Password" Width="70" Binding="{Binding Password}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Type" Width="90" Binding="{Binding Type}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Blocked" Width="90" Binding="{Binding Blocked}"></DataGridTextColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Height="76" Width="800" VerticalAlignment="Top" Margin="0,284,0,0">
+            <Button x:Name="createBtn" Content="Create" HorizontalAlignment="Left" Margin="50,20,0,0" VerticalAlignment="Top" Height="38" Width="112" Click="createBtn_Click"/>
+            <Button x:Name="readBtn" Content="Read" HorizontalAlignment="Left" Margin="75,20,0,0" VerticalAlignment="Top" Height="38" Width="112" Click="readBtn_Click"/>
+            <Button x:Name="updateBtn" Content="Update" HorizontalAlignment="Left" Margin="100,20,0,0" VerticalAlignment="Top" Height="38" Width="112" Click="updateBtn_Click"/>
+            <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="50,20,0,0" VerticalAlignment="Top" Height="38" Width="112" Click="deleteBtn_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

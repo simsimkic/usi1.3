@@ -1,0 +1,16 @@
+﻿<Window x:Class="ZdravoCorp.GUI.Nurse_s_View.NurseMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.GUI.Nurse_s_View"
+        mc:Ignorable="d"
+        Title="NurseMain" Height="500" Width="700">
+    <Grid>
+        <Label x:Name="welcomeLabel" Content="Welcome Nurse!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-10.669,-1.312" Height="34" Width="152" FontSize="14"/>
+        <Label x:Name="menuOptionsLabel" Content="Menu Options" HorizontalAlignment="Center" Margin="0,86,0,0" Padding="330,10,0,10" VerticalAlignment="Top" FontSize="16" Background="#FFFFC680" Width="780" FontWeight="Bold"/>
+        <Label x:Name="viewAccountsLabel" Content="1. View patients accounts  " HorizontalAlignment="Left" Margin="52,168,0,0" VerticalAlignment="Top" FontSize="16" Width="258" Height="32"/>
+        <Button x:Name="viewAccountsBtn" Content="View Accounts" HorizontalAlignment="Left" Margin="458,165,0,0" VerticalAlignment="Top" Height="37" Width="147" FontSize="16" Click="viewAccountsBtn_Click"/>
+
+    </Grid>
+</Window>

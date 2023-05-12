@@ -1,0 +1,30 @@
+﻿<Window x:Class="ZdravoCorp.GUI.Patient_s_View.EditAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.GUI"
+        mc:Ignorable="d"
+        Title="EditAppointment" Height="450" Width="398">
+    <Grid>
+        <Label Content="Appointment time: " HorizontalAlignment="Left" Height="38" Margin="10,173,0,0" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.54,0.56" Grid.Row="1"/>
+        <Label Content="Select a doctor: " HorizontalAlignment="Left" Height="42" Margin="10,44,0,0" VerticalAlignment="Top" Width="134" RenderTransformOrigin="0.5,-0.571"/>
+        <Label Content="Duration: " HorizontalAlignment="Left" Height="33" Margin="10,234,0,0" VerticalAlignment="Top" Width="144"/>
+        <Label Content="&#x9;&#x9;      Edit Appointment" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="426" Height="33" FontWeight="Bold" FontFamily="Segoe UI" FontSize="14" Background="#FFF4E9E9" Grid.RowSpan="2"/>
+        <Label Content="Appointment date and time: " HorizontalAlignment="Left" Height="27" Margin="10,108,0,0" VerticalAlignment="Top" Width="189"/>
+        <Button Content="Save changes" Click="Button_Click" HorizontalAlignment="Center" Height="27" Margin="0,346,0,0" VerticalAlignment="Top" Width="166"/>
+        <ComboBox HorizontalAlignment="Left" Height="30" Margin="159,45,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1" Grid.Row="1" Name="comboBox1" ItemsSource="{Binding Doctors}" SelectedItem="{Binding SelectedDoctor}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding FirstName}"/>
+                        <TextBlock Text="{Binding LastName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <DatePicker x:Name="DateTimeTBox" SelectedDate="{Binding SelectedDateTime}" HorizontalAlignment="Left" Height="24" Margin="217,111,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.488,-0.063"/>
+        <TextBox x:Name="TBoxDuration" IsEnabled="False" HorizontalAlignment="Left" Height="33" Margin="159,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="TimeTBox" HorizontalAlignment="Left" Height="28" Margin="159,175,0,0" VerticalAlignment="Top" Width="167" LostFocus="TimeTBox_OnLostFocus" Grid.Row="1"/>
+    </Grid>
+</Window>

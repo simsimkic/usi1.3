@@ -1,0 +1,34 @@
+﻿<Window x:Class="ZdravoCorp.GUI.Patient_s_View.PatientLastAppointments"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.GUI.Patient_s_View"
+        mc:Ignorable="d"
+        Title="PatientLastAppointments" Height="460" Width="800">
+    <Grid Margin="2,0,-2,0">
+
+        <DataGrid ItemsSource ="{Binding Path=Appointments}" SelectedItem="{Binding SelectedAppointment}"
+                      Margin="16,12,16,104" SelectionMode="Single" AutoGenerateColumns="False" Name="AppointmentsDataGrid" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Doctor name" Width="100" Binding="{Binding Doctor.FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Doctor Surname" Width="100" Binding="{Binding Doctor.LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Doctor Specialization" Width="100" Binding="{Binding Doctor.Specialization}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date" Width="100" Binding="{Binding TimeSlot.Start, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Type" Width="100" Binding="{Binding Type}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Width="150" Binding="{Binding Status}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Anamnesis" Width="150" Binding="{Binding Anamnesis.Report}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Height="20" Text="{Binding SearchParam}" Width="100" Margin="450,350,50,41"></TextBox>
+        <Label Height="30" Width="100" Margin="300,350,50,41">Search:</Label>
+        <Button Height="20" Width="50" Margin="650,350,50,41" Click="Button_Click">Search</Button>
+        <Button HorizontalAlignment="Left" Margin="37,357,0,0" VerticalAlignment="Top" Click="SortByDateBtn_Click">Sort by date</Button>
+        <Button HorizontalAlignment="Left" Margin="225,357,0,0" VerticalAlignment="Top" Click="SortByDoctorsNameBtn_Click">Sort by doctor's name</Button>
+        <Button HorizontalAlignment="Left" Margin="225,398,0,0" VerticalAlignment="Top" Click="SortByDoctorsSurname_Click">Sort by doctor's surname</Button>
+        <Button HorizontalAlignment="Left" Margin="37,398,0,0" VerticalAlignment="Top" Click="SortBySpecialization_Click">Sort by specialization</Button>
+
+
+    </Grid>
+</Window>

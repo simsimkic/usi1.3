@@ -1,0 +1,15 @@
+﻿<Window x:Class="ZdravoCorp.GUI.AdministratorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.GUI"
+        mc:Ignorable="d"
+        Title="AdministratorView" Height="450" Width="800">
+    <Grid>
+        <Button Content="Search equipment" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="800" Click="ShowSearchEquipmentView_ButtonClick"/>
+        <Button Content="Order dynamic equipment" HorizontalAlignment="Center" Height="28" Margin="0,32,0,0" VerticalAlignment="Top" Width="800" Click="ShowOrderDynamicEquipmentView_Button_Click"/>
+        <Button Content="Equipment relocation" HorizontalAlignment="Center" Height="34" Margin="0,99,0,0" VerticalAlignment="Top" Width="800" Click="ShowEquipmentRelocationView_Button_Click"/>
+        <Button Content="Equipment Arrangement" HorizontalAlignment="Center" Height="39" Margin="0,60,0,0" VerticalAlignment="Top" Width="800" Click="ShowEquipmentArrangementView_Button_Click"/> 
+    </Grid>
+</Window>

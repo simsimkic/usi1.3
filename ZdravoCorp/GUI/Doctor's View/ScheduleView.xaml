@@ -1,0 +1,40 @@
+﻿<Window x:Class="ZdravoCorp.GUI.Doctor_s_View.ScheduleView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp"
+        mc:Ignorable="d"
+        Title="AppointmentsView" Height="450" Width="800">
+
+    <Grid Margin="2,0,-2,0">
+
+
+        <DataGrid ItemsSource ="{Binding Appointment}"
+                          Margin="10,55,16,104" SelectionMode="Single" AutoGenerateColumns="False" Name="AppointmentsDataGrid" IsReadOnly="True" SelectionChanged="AppointmentsDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Appointment's ID" Width="110" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Doctor's ID" Width="80" Binding="{Binding DoctorId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Patient's ID" Width="80" Binding="{Binding PatientId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date" Width="140" Binding="{Binding TimeSlot.Start, StringFormat='{}{0:dd/MM/yyyy}'}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Duration" Width="70" Binding="{Binding TimeSlot.Duration}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Type" Width="110" Binding="{Binding Type}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Width="90" Binding="{Binding Status}"></DataGridTextColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Button x:Name="CreateAppointmentBtn" Content="Add" HorizontalAlignment="Left" Height="21" Margin="10,374,0,0" VerticalAlignment="Top" Width="123" Click="Button_Click" RenderTransformOrigin="-0.106,0.526"/>
+        <Button x:Name="CancelAppointmentBtn" Content="Cancel" HorizontalAlignment="Left" Height="20" Margin="317,375,0,0" VerticalAlignment="Top" Width="123" Click="CancelAppointmentBtn_Click"/>
+        <Button x:Name="EditAppointmentBtn" Content="Edit" HorizontalAlignment="Left" Height="21" Margin="163,374,0,0" VerticalAlignment="Top" Width="123" Click="EditAppointmentBtn_Click" RenderTransformOrigin="-0.476,0.097"/>
+        <Button Content="See Medical Record" HorizontalAlignment="Left" Height="21" Margin="472,375,0,0" VerticalAlignment="Top" Width="123" Click="Button_Click_1"/>
+        <TextBox x:Name="DateTextBox" HorizontalAlignment="Left" Height="23" Margin="245,24,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="230"/>
+        <Label Content="Input date (FORMAT: dd.MM.yyyy.) : " HorizontalAlignment="Left" Height="29" Margin="10,21,0,0" VerticalAlignment="Top" Width="211"/>
+        <Button Content="Search" HorizontalAlignment="Left" Height="23" Margin="552,24,0,0" VerticalAlignment="Top" Width="175" Click="SearchBtnClick"/>
+        <Button x:Name="PerformExaminationBtn" Content="Perform Examination" HorizontalAlignment="Left" Height="21" Margin="640,375,0,0" VerticalAlignment="Top" Width="123" Click="PerformExaminationBtn_Click"/>
+
+    </Grid>
+</Window>
+
